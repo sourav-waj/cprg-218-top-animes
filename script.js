@@ -7,15 +7,22 @@ function hideSidebar() {
     const sidebar = document.querySelector('.sidebar');
     sidebar.style.display = 'none'
 }
-
 const toggle = document.getElementById('toggleDark');
 const body = document.querySelector('body');
 
 toggle.addEventListener('click', function() {
-    this.classList.toggle('fa-regular', 'fa-moon');
-    if (this.classList.contains('fa-regular', 'fa-moon')) {
-        body.style.background = 'white';
-    } else {
+
+    if (this.classList.contains('fa-lightbulb')) {
+        this.classList.remove('fa-lightbulb');
+        this.classList.add('fa-moon');
         body.style.background = 'black';
+        body.style.color = 'white'; 
+        body.style.borderColor = 'white';
+    } else {
+        this.classList.remove('fa-moon');
+        this.classList.add('fa-lightbulb');
+        body.style.background = 'white';
+        body.style.color = 'black'; 
+        body.style.borderColor = 'black';
     }
 });
